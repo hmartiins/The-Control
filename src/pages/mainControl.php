@@ -13,17 +13,17 @@
   </head>
 
   <body>
-      <header>
-        <div class="report">
-          <i class="fa fa-chart-line"></i>
-          <b>Relatórios</b>
-        </div>
+    <header>
+      <div class="report">
+        <i class="fa fa-chart-line"></i>
+        <b>Relatórios</b>
+      </div>
 
-        <img src="../assets/logoilustrativa.png" alt="The Control" />
+      <img src="../assets/logoilustrativa.png" alt="The Control" />
 
-        <div class="logout">
-          <i class="fas fa-sign-out-alt"></i>
-        </div>
-      </header>
+      <div class="logout">
+        <i class="fas fa-sign-out-alt"></i>
+      </div>
+    </header>
   </body>
 </html>

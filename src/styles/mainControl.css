@@ -7,3 +7,41 @@
 body {
   background: var(--color-background);
 }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 80px;
+  padding: 0 135px;
+
+  background: var(--in-background);
+}
+
+header .report {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 140px;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-primary);
+}
+
+header .report i {
+  font-size: 35px;
+  color: var(--color-primary);
+  margin-right: 10px;
+}
+
+header img {
+  max-height: 70px;
+}
+
+header .logout i {
+  font-size: 35px;
+  color: var(--color-primary);
+}
