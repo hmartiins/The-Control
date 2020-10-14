@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 :root {
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:root{
+>>>>>>> f8948643edb8d459cd1dd5fc3db68f83a841b320
   --color-background: #040900;
   --in-background: #121212;
   --color-primary: #47b42c;
