@@ -26,11 +26,16 @@
         </label>
       </div>
       <div class="button-group">
-        <button>
+        <button onclick="redirectPage()">
           Entrar
         </button>
       </div>
     </div>
   </div>
+  <script>
+    function redirectPage() {
+      window.location='src/pages/mainControl.php';
+    }
+  </script>
 </body>
 </html>
