@@ -26,12 +26,12 @@ header .report {
   width: 140px;
 
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
   font-size: 18px;
+  font-weight: 600;
   color: var(--color-primary);
 }
 
-header .report i {
+header .report svg {
   font-size: 35px;
   color: var(--color-primary);
   margin-right: 10px;
@@ -41,7 +41,7 @@ header img {
   max-height: 70px;
 }
 
-header .logout i {
+header .logout svg{
   font-size: 35px;
   color: var(--color-primary);
 }
