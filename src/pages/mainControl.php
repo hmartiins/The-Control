@@ -149,6 +149,21 @@
       </div>
     </div>
 
+    <footer>
+      <img src="../assets/logoilustrativa.png" alt="The Control" />
+
+      <p>
+        <b>Feito por:</b>
+        <a href="https://github.com/joaovds">
+          João Victor
+        </a>
+        e
+        <a href="https://github.com/hmartiins">
+          Henrique Martins
+        </a>
+      </p>
+    </footer>
+
     <script>
       const menu = document.getElementById('menu');
       const activeMenu = document.getElementById('openMenu');
