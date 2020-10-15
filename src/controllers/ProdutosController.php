@@ -125,6 +125,28 @@ class Produto extends AbstractCrud
     }
   }
 
+  public function insertProdutoCategoria($categorias)
+  {
+    try {
+      $total = sizeof($categorias);
+      $id = Connection::getInstance()->lastInsertId();
+
+      $sql = "INSERT INTO produto_categoria VALUES ";
+
+      for ($i = 0; $i < $total; $i++) {
+        $sql .= "($categorias[$i], $id),";
+      }
+
+      $sql = substr($sql, 0, -1);
+
+      $stmt = Connection::getInstance()->prepare($sql);
+
+      return $stmt->execute();
+    } catch (PDOException $error) {
+      echo $error->getMessage();
+    }
+  }
+
   public function update($id)
   {
     try {
@@ -160,6 +182,19 @@ class Produto extends AbstractCrud
   {
     try {
       $sql = "DELETE FROM $this->tableName WHERE $this->cdName = :id";
+      $stmt = Connection::getInstance()->prepare($sql);
+      $stmt->bindParam(':id', $id);
+
+      return $stmt->execute();
+    } catch (PDOException $error) {
+      echo $error->getMessage();
+    }
+  }
+
+  public function deleteProdutoCategoria($id)
+  {
+    try {
+      $sql = "DELETE FROM produto_categoria WHERE id_produto = :id";
       $stmt = Connection::getInstance()->prepare($sql);
       $stmt->bindParam(':id', $id);
 
