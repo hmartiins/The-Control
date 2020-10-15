@@ -134,7 +134,7 @@ class Produto extends AbstractCrud
       $sql = "INSERT INTO produto_categoria VALUES ";
 
       for ($i = 0; $i < $total; $i++) {
-        $sql .= "($categorias[$i], $id),";
+        $sql .= "($id, $categorias[$i]),";
       }
 
       $sql = substr($sql, 0, -1);
