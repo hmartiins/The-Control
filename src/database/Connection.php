@@ -20,6 +20,7 @@ class Connection
 
       self::$instance->setAttribute(
         PDO::ATTR_ERRMODE,
+        PDO::ERRMODE_EXCEPTION,
         PDO::NULL_EMPTY_STRING,
         PDO::ATTR_ORACLE_NULLS
       );
