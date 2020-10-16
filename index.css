@@ -1,20 +1,31 @@
-body{
+html, body{
+  height: 100%;
+  min-height: 100%;
   background-color: var(--color-background);
 }
 *{
+  overflow: hidden;
   font-family: 'Poppins';
 }
 
 .container{
+  /* background-color: blue; */
+  height: 100%;
+  min-height: 100%;
+  display: -webkit-flex;
   display: flex;
-  flex: 1;
-  justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   flex-direction: column;
 }
+.headerImage{
+  margin-top: -1%;
+}
 .headerImage img{
-  height: 180px;
-  width: 180px;
+  height: 170px;
+  width: 170px;
 }
 .content h1{
   color: var(--color-primary);
@@ -77,13 +88,14 @@ body{
 }
 
 .button-group button{
-  padding: 13px 32px;
+  padding: 13px 48px;
   background: transparent;
   cursor: pointer;
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
   border-radius: 10px;
   margin-top: 10%;
+  font-size: 15px;
 }
 .button-group button:hover {
   transition: 0.3s;

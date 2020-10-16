@@ -14,15 +14,15 @@
     <div class="content">
       <h1>Login</h1>
       <div class="input-group">
-				<label class="input-underlined">
-				  <input required>
-				  <span class="input-label">Usuário</span>
+        <label class="input-underlined">
+          <input required>
+          <span class="input-label">Usuário</span>
         </label>
       </div>
       <div class="input-group">
-				<label class="input-underlined">
-				  <input required>
-				  <span class="input-label">Senha</span>
+        <label class="input-underlined">
+          <input required>
+          <span class="input-label">Senha</span>
         </label>
       </div>
       <div class="button-group">
