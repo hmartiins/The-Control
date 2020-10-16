@@ -162,6 +162,10 @@
           Henrique Martins
         </a>
       </p>
+
+      <a href="https://github.com/hmartiins/The-Control">
+        <img src="../assets/githubLogo.svg" alt="github logo">
+      </a>
     </footer>
 
     <script>
