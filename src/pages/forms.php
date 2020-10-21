@@ -4,6 +4,31 @@ require_once '../controllers/CategoriaController.php';
 
 $produtos = new Produto();
 $categorias = new Categoria();
+
+if (isset($_POST['cadastrarCategoria'])) {
+  $nome = $_POST['nomeCategoria'];
+
+  $categorias->setNome($nome);
+
+  if ($categorias->insert()) {
+    echo '<script>alert("Cadastro feito com sucesso!"); window.location="mainControl.php"</script>';
+  } else {
+    echo '<script>alert("Aconteceu algo de errado!");</script>';
+  }
+}
+
+if (isset($_POST['atualizarCategoria'])) {
+  $id = $_POST['id'];
+  $nome = $_POST['nomeCategoria'];
+
+  $categorias->setNome($nome);
+
+  if ($categorias->update($id)) {
+    echo '<script>alert("Atualização feita com sucesso!"); window.location="mainControl.php"</script>';
+  } else {
+    echo '<script>alert("Aconteceu algo de errado!");</script>';
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -189,6 +214,7 @@ $categorias = new Categoria();
           <div class="col-sm-12">
             <label for="nomeCategoria">Nome</label>
             <input type="text" name="nomeCategoria" class="form-control form-control-lg" value="<?php echo $value['nome']; ?>">
+            <input type="hidden" name="id" value="<?php echo $value['cd'] ?>">
           </div>
         </div>
 
