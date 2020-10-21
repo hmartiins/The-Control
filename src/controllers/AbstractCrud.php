@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Connection.php';
+require_once '../database/Connection.php';
 
 abstract class AbstractCrud extends Connection
 {
