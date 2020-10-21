@@ -1,3 +1,11 @@
+<?php
+require_once '../controllers/ProdutosController.php';
+require_once '../controllers/CategoriaController.php';
+
+$produtos = new Produto();
+$categorias = new Categoria();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +32,7 @@
 
   <div class="containerPage">
 
+    <!-- Formulários de criação -->
     <?php if ((isset($_GET['create'])) && $_GET['create'] == "produto") : ?>
       <form method="post" class="mt-3">
         <div class="row">
@@ -63,6 +72,22 @@
         </div>
 
         <div class="row">
+          <div class="col-12 mt-4">
+            <label for="categorias">Categorias:</label>
+
+            <?php foreach ($categorias->findAll() as $key => $value) : ?>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="categorias[]" value="<?php echo $value['cd'] ?>">
+                <label class="form-check-label" for="categoria">
+                  <?php echo $value['nome'] ?>
+                </label>
+              </div>
+            <?php endforeach ?>
+
+          </div>
+        </div>
+
+        <div class="row">
           <div class="col-sm-6 mt-3">
             <label for="desenvolvedor">Desenvolvedor</label>
             <input type="text" name="desenvolvedor" class="form-control form-control-lg">
@@ -94,27 +119,31 @@
           </div>
       </form>
 
-    <?php elseif ((isset($_GET['update'])) && (isset($_GET['id'])) && ($_GET['update'] == "produto")) : ?>
+      <!-- Formulários de atualização -->
+    <?php
+    elseif ((isset($_GET['update'])) && (isset($_GET['id'])) && ($_GET['update'] == "produto")) :
+      $value = $produtos->findOne($_GET['id']);
+    ?>
       <form method="post" class="mt-3">
         <div class="row">
           <div class="col-sm-6">
             <label for="nome">Nome</label>
-            <input type="text" name="nome" class="form-control form-control-lg">
+            <input type="text" name="nome" class="form-control form-control-lg" value="<?php echo $value['nome'] ?>">
           </div>
           <div class="col-sm-6 mt-3 mt-sm-0">
             <label for="preco">Preço</label>
-            <input type="number" name="preco" class="form-control form-control-lg" step="0.01">
+            <input type="number" name="preco" class="form-control form-control-lg" step="0.01" value="<?php echo $value['preco'] ?>">
           </div>
         </div>
 
         <div class="row">
           <div class="col-sm-6 mt-3">
             <label for="idioma">Idioma</label>
-            <input type="text" name="idioma" class="form-control form-control-lg">
+            <input type="text" name="idioma" class="form-control form-control-lg" value="<?php echo $value['idioma'] ?>">
           </div>
           <div class="col-sm-6 mt-3">
             <label for="plataforma">Plataforma</label>
-            <input type="text" name="plataforma" class="form-control form-control-lg">
+            <input type="text" name="plataforma" class="form-control form-control-lg" value="<?php echo $value['plataforma'] ?>">
           </div>
         </div>
 
@@ -122,24 +151,26 @@
           <div class="col-sm-6 mt-3">
             <label for="multiplayer">Multiplayer</label>
             <select name="multiplayer" class="form-control form-control-lg">
-              <option value="false" selected>Não</option>
-              <option value="true">Sim</option>
+              <option value="false" <?php if ($value['multiplayer'] = 0) : echo "selected";
+                                    endif ?>>Não</option>
+              <option value="true" <?php if ($value['multiplayer'] = 1) : echo "selected";
+                                    endif ?>>Sim</option>
             </select>
           </div>
           <div class="col-sm-5 mt-3">
             <label for="anoLancamento">Ano de Lançamento</label>
-            <input type="number" min="1000" max="9999" name="anoLancamento" class="form-control form-control-lg">
+            <input type="number" min="1000" max="9999" name="anoLancamento" class="form-control form-control-lg" value="<?php echo $value['ano_lancamento'] ?>">
           </div>
         </div>
 
         <div class="row">
           <div class="col-sm-6 mt-3">
             <label for="desenvolvedor">Desenvolvedor</label>
-            <input type="text" name="desenvolvedor" class="form-control form-control-lg">
+            <input type="text" name="desenvolvedor" class="form-control form-control-lg" value="<?php echo $value['desenvolvedor'] ?>">
           </div>
           <div class="col-sm-5 mt-3">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" class="form-control form-control-lg">
+            <input type="number" name="quantidade" class="form-control form-control-lg" value="<?php echo $value['quantidade'] ?>">
           </div>
         </div>
 
@@ -149,12 +180,15 @@
           </div>
       </form>
 
-    <?php elseif ((isset($_GET['update'])) && (isset($_GET['id'])) && ($_GET['update'] == "categoria")) : ?>
+    <?php
+    elseif ((isset($_GET['update'])) && (isset($_GET['id'])) && ($_GET['update'] == "categoria")) :
+      $value = $categorias->findOne($_GET['id']);
+    ?>
       <form method="post" class="mt-3">
         <div class="row">
           <div class="col-sm-12">
             <label for="nomeCategoria">Nome</label>
-            <input type="text" name="nomeCategoria" class="form-control form-control-lg">
+            <input type="text" name="nomeCategoria" class="form-control form-control-lg" value="<?php echo $value['nome']; ?>">
           </div>
         </div>
 
