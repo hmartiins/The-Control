@@ -73,7 +73,7 @@
           <h3>Administrar algo</h3>
           <p>Cadastrar, listar, atualizar e deletar: algo</p>
           <div class="button">
-            <a href="#">Visualizar</a>
+            <a href="management.php">Visualizar</a>
           </div>
         </div>
       </div>
