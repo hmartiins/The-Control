@@ -59,6 +59,36 @@ if (isset($_POST['cadastrarProduto'])) {
     echo '<script>alert("Aconteceu algo de errado!");</script>';
   }
 }
+
+if (isset($_POST['atualizarProduto'])) {
+  $id = $_POST['id'];
+
+  $nome = $_POST['nome'];
+  $preco = $_POST['preco'];
+  $idioma = $_POST['idioma'];
+  $plataforma = $_POST['plataforma'];
+  $multiplayer = $_POST['multiplayer'];
+  $anoLancamento = $_POST['anoLancamento'];
+  $desenvolvedor = $_POST['desenvolvedor'];
+  $quantidade = $_POST['quantidade'];
+
+  $multiplayer = ("true") ? true : false;
+
+  $produtos->setNome($nome);
+  $produtos->setPreco($preco);
+  $produtos->setIdioma($idioma);
+  $produtos->setPlataforma($plataforma);
+  $produtos->setMultiplayer($multiplayer);
+  $produtos->setAnoLancamento($anoLancamento);
+  $produtos->setDesenvolvedor($desenvolvedor);
+  $produtos->setQuantidade($quantidade);
+
+  if ($produtos->update($id)) {
+    echo '<script>alert("Atualização feita com sucesso!"); window.location="mainControl.php"</script>';
+  } else {
+    echo '<script>alert("Aconteceu algo de errado!");</script>';
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -180,6 +210,7 @@ if (isset($_POST['cadastrarProduto'])) {
       $value = $produtos->findOne($_GET['id']);
     ?>
       <form method="post" class="mt-3">
+        <input type="hidden" name="id" value="<?php echo $value['cd'] ?>">
         <div class="row">
           <div class="col-sm-6">
             <label for="nome">Nome</label>
