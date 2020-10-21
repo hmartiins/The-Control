@@ -39,13 +39,13 @@ header .back svg {
   margin-right: 10px;
 }
 
-header .back:hover svg{
+header .back:hover svg {
   filter: brightness(0.8);
 }
 
 header img {
   max-height: 70px;
-} 
+}
 
 header .plus svg {
   font-size: 35px;
@@ -67,7 +67,57 @@ header .plus:hover {
   flex-wrap: wrap;
 }
 
+table {
+  margin-top: 50px;
+  border: 1px solid #be24a7;
+  box-shadow: 0 0 5px #be24a7;
+  background: #121212 !important;
+
+  width: 98%;
+  max-width: 1100px;
+  border-collapse: collapse;
+  text-align: left;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+table thead tr th {
+  color: #be24a7;
+  border-top: 1px solid #be24a7 !important;
+  border-bottom: 1px solid #be24a7 !important;
+
+  padding: 8px;
+}
+table tbody tr th,
+table tbody tr td {
+  border: none !important;
+  padding: 8px;
+
+  color: var(--white-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions svg {
+  font-size: 25px;
+  color: #be24a7;
+  opacity: 0.6;
+
+  transition: all 0.5s;
+}
+.actions svg:hover {
+  opacity: 1;
+}
+
 footer {
+  position: absolute;
+  bottom: 0;
+
   width: 100%;
   height: 80px;
   display: flex;
@@ -103,12 +153,9 @@ footer p a:hover {
   header {
     height: 120px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 70px 50px;
-    grid-template-areas: 'logo' 'rela';
-  }
-  header .plus svg {
-    display: none;
+    grid-template-areas: 'logo logo' 'rela create';
   }
   header img {
     grid-area: logo;
@@ -120,12 +167,30 @@ footer p a:hover {
     justify-content: center;
     width: auto;
     font-size: 16px;
+    justify-self: center;
   }
   header .back svg {
     font-size: 24px;
   }
+  header .plus {
+    grid-area: create;
+    justify-content: center;
+    width: auto;
+    font-size: 16px;
+    justify-self: center;
+  }
+  header .plus svg {
+    font-size: 24px;
+  }
 }
 @media (max-width: 480px) {
+  table {
+    font-size: 14px;
+  }
+  table .actions svg {
+    font-size: 20px;
+  }
+
   footer {
     flex-direction: column;
     height: 100px;
@@ -136,36 +201,4 @@ footer p a:hover {
   footer img {
     max-height: 50px;
   }
-}
-
-table {
-  border: 1px solid #BE24A7;
-  box-shadow: 0 0 5px #BE24A7;
-  background: #121212 !important;
-}
-table thead tr th {
-  color: #BE24A7;
-  border-top: 1px solid #BE24A7 !important;
-  border-bottom: 1px solid #BE24A7 !important;
-}
-table tbody tr th,
-table tbody tr td {
-  border: none !important;
-}
-
-.actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.actions svg {
-  font-size: 25px;
-  color: #BE24A7;
-  opacity: 0.6;
-  
-  transition: all 0.5s;
-}
-.actions svg:hover {
-  opacity: 1;
 }
