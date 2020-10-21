@@ -70,10 +70,10 @@
         <span></span>
         <div class="content">
           <h2>01</h2>
-          <h3>Administrar algo</h3>
-          <p>Cadastrar, listar, atualizar e deletar: algo</p>
+          <h3>Administrar Produtos</h3>
+          <p>Cadastrar, listar, atualizar e deletar: Produtos</p>
           <div class="button">
-            <a href="management.php">Visualizar</a>
+            <a href="management.php?admin=produtos">Visualizar</a>
           </div>
         </div>
       </div>
@@ -84,10 +84,10 @@
         <span></span>
         <div class="content">
           <h2>02</h2>
-          <h3>Administrar algo</h3>
-          <p>Cadastrar, listar, atualizar e deletar: algo</p>
+          <h3>Administrar Categorias</h3>
+          <p>Cadastrar, listar, atualizar e deletar: Categorias</p>
           <div class="button">
-            <a href="#">Visualizar</a>
+            <a href="management.php?admin=categorias">Visualizar</a>
           </div>
         </div>
       </div>
