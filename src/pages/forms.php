@@ -29,6 +29,36 @@ if (isset($_POST['atualizarCategoria'])) {
     echo '<script>alert("Aconteceu algo de errado!");</script>';
   }
 }
+
+if (isset($_POST['cadastrarProduto'])) {
+  $nome = $_POST['nome'];
+  $preco = $_POST['preco'];
+  $idioma = $_POST['idioma'];
+  $plataforma = $_POST['plataforma'];
+  $multiplayer = $_POST['multiplayer'];
+  $anoLancamento = $_POST['anoLancamento'];
+  $desenvolvedor = $_POST['desenvolvedor'];
+  $quantidade = $_POST['quantidade'];
+  $categorias = $_POST['categorias'];
+
+  $multiplayer = ("true") ? true : false;
+
+  $produtos->setNome($nome);
+  $produtos->setPreco($preco);
+  $produtos->setIdioma($idioma);
+  $produtos->setPlataforma($plataforma);
+  $produtos->setMultiplayer($multiplayer);
+  $produtos->setAnoLancamento($anoLancamento);
+  $produtos->setDesenvolvedor($desenvolvedor);
+  $produtos->setQuantidade($quantidade);
+
+  if ($produtos->insert()) {
+    $produtos->insertProdutoCategoria($categorias);
+    echo '<script>alert("Cadastro feito com sucesso!"); window.location="mainControl.php"</script>';
+  } else {
+    echo '<script>alert("Aconteceu algo de errado!");</script>';
+  }
+}
 ?>
 
 <!DOCTYPE html>
