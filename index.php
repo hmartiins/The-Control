@@ -15,18 +15,18 @@
       <h1>Login</h1>
       <div class="input-group">
         <label class="input-underlined">
-          <input required>
+          <input required id="username">
           <span class="input-label">Usuário</span>
         </label>
       </div>
       <div class="input-group">
         <label class="input-underlined">
-          <input required>
+          <input required id="password">
           <span class="input-label">Senha</span>
         </label>
       </div>
       <div class="button-group">
-        <button onclick="redirectPage()">
+        <button onclick="handleLogin()">
           Entrar
         </button>
       </div>
@@ -35,6 +35,16 @@
   <script>
     function redirectPage() {
       window.location='src/pages/mainControl.php';
+    }
+    function handleLogin() {
+      const username = document.getElementById('username');
+      const password = document.getElementById('password');
+
+      if(username.value === 'admin' && password.value === 'admin'){
+        redirectPage();
+      } else {
+        alert('Credenciais erradas, tente novamente');
+      }
     }
   </script>
 </body>
