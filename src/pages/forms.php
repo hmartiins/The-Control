@@ -39,7 +39,7 @@ if (isset($_POST['cadastrarProduto'])) {
   $anoLancamento = $_POST['anoLancamento'];
   $desenvolvedor = $_POST['desenvolvedor'];
   $quantidade = $_POST['quantidade'];
-  $categorias = $_POST['categorias'];
+  $categoriasValues = $_POST['categorias'];
 
   $multiplayer = ("true") ? true : false;
 
@@ -53,7 +53,7 @@ if (isset($_POST['cadastrarProduto'])) {
   $produtos->setQuantidade($quantidade);
 
   if ($produtos->insert()) {
-    $produtos->insertProdutoCategoria($categorias);
+    $produtos->insertProdutoCategoria($categoriasValues);
     echo '<script>alert("Cadastro feito com sucesso!"); window.location="mainControl.php"</script>';
   } else {
     echo '<script>alert("Aconteceu algo de errado!");</script>';

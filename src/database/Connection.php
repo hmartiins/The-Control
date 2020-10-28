@@ -6,9 +6,9 @@ class Connection
 
   public static function getInstance()
   {
-    $connectionString = 'mysql:host=fdb29.awardspace.net;port=3306;dbname=3623241_thecontrol;charset=utf8';
-    $userName = '3623241_thecontrol';
-    $password = 'Senha123456h';
+    $connectionString = 'mysql:host=localhost;port=3306;dbname=thecontrol;charset=utf8';
+    $userName = 'root';
+    $password = '';
 
     if (!isset(self::$instance)) {
       self::$instance = new PDO(

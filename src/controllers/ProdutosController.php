@@ -98,8 +98,9 @@ class Produto extends AbstractCrud
   public function insert()
   {
     try {
-      $sql = "INSERT INTO $this->tableName VALUES (
-        null,
+      $sql = "INSERT INTO $this->tableName
+        (nome, preco, idioma, plataforma, multiplayer, ano_lancamento, desenvolvedor, quantidade)
+        VALUES (
         :nome,
         :preco,
         :idioma,

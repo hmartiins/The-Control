@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>The Control</title>
   <link rel="stylesheet" href="vars.css">
   <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
   <div class="container">
     <div class="headerImage">
@@ -21,7 +23,7 @@
       </div>
       <div class="input-group">
         <label class="input-underlined">
-          <input required id="password">
+          <input type="password" required id="password">
           <span class="input-label">Senha</span>
         </label>
       </div>
@@ -34,13 +36,14 @@
   </div>
   <script>
     function redirectPage() {
-      window.location='src/pages/mainControl.php';
+      window.location = 'src/pages/mainControl.php';
     }
+
     function handleLogin() {
       const username = document.getElementById('username');
       const password = document.getElementById('password');
 
-      if(username.value === 'admin' && password.value === 'admin'){
+      if (username.value === 'admin' && password.value === 'admin') {
         redirectPage();
       } else {
         alert('Credenciais erradas, tente novamente');
@@ -48,4 +51,5 @@
     }
   </script>
 </body>
+
 </html>
