@@ -21,8 +21,7 @@ class Categoria extends AbstractCrud
   public function insert()
   {
     try {
-      $sql = "INSERT INTO $this->tableName VALUES (
-        null,
+      $sql = "INSERT INTO $this->tableName (nome) VALUES (
         :nome
       )";
       $stmt = Connection::getInstance()->prepare($sql);

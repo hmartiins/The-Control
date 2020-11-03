@@ -6,9 +6,13 @@ class Connection
 
   public static function getInstance()
   {
-    $connectionString = 'mysql:host=localhost;port=3306;dbname=thecontrol;charset=utf8';
-    $userName = 'root';
-    $password = '';
+    $connectionString = "pgsql:"
+      . "host=ec2-52-73-199-211.compute-1.amazonaws.com;"
+      . "port=5432;"
+      . "dbname=d3bs6imcvlg6ue;"
+      . "sslmode=require;";
+    $userName = 'ophvormohnbclo';
+    $password = '845e8b0be447ec1a25fe81f2cba3804b6ae7d06d57629846b9e54af4ac30af4d';
 
     if (!isset(self::$instance)) {
       self::$instance = new PDO(
