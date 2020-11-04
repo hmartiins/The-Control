@@ -129,6 +129,9 @@ class Produto extends AbstractCrud
   public function insertProdutoCategoria($categorias)
   {
     try {
+      if (!$categorias) {
+        return false;
+      }
       $total = sizeof($categorias);
       $id = Connection::getInstance()->lastInsertId();
 
